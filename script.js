@@ -3,15 +3,24 @@
     emailjs.init("YOUR_PUBLIC_KEY"); // Replace with your EmailJS public key
 })();
 
+// Loading animation
+document.addEventListener('DOMContentLoaded', () => {
+    document.body.classList.add('loading');
+});
+
 // Smooth scrolling for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
         const target = document.querySelector(this.getAttribute('href'));
         if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
+            const headerOffset = 80;
+            const elementPosition = target.offsetTop;
+            const offsetPosition = elementPosition - headerOffset;
+
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: 'smooth'
             });
         }
     });
@@ -26,7 +35,7 @@ hamburger.addEventListener('click', () => {
     hamburger.classList.toggle('active');
 });
 
-// Dark mode toggle
+// Dark mode toggle with smooth transition
 const darkModeToggle = document.getElementById('dark-mode-toggle');
 const body = document.body;
 
@@ -51,7 +60,7 @@ if (localStorage.getItem('darkMode') === 'enabled') {
     darkModeToggle.querySelector('i').classList.add('fa-sun');
 }
 
-// Back to top button
+// Back to top button with enhanced animation
 const backToTopButton = document.getElementById('back-to-top');
 
 window.addEventListener('scroll', () => {
@@ -69,15 +78,17 @@ backToTopButton.addEventListener('click', () => {
     });
 });
 
-// Animate skill bars on scroll
+// Animate skill bars on scroll with stagger effect
 const skillBars = document.querySelectorAll('.skill-fill');
 
 function animateSkillBars() {
-    skillBars.forEach(bar => {
+    skillBars.forEach((bar, index) => {
         const barTop = bar.getBoundingClientRect().top;
         const windowHeight = window.innerHeight;
         if (barTop < windowHeight - 50) {
-            bar.style.width = bar.style.width || '0%';
+            setTimeout(() => {
+                bar.style.width = bar.style.width || '0%';
+            }, index * 200);
         }
     });
 }
@@ -85,25 +96,32 @@ function animateSkillBars() {
 window.addEventListener('scroll', animateSkillBars);
 window.addEventListener('load', animateSkillBars);
 
-// Fade in animation for sections
+// Enhanced scroll animations with stagger effect
 const observerOptions = {
     threshold: 0.1,
     rootMargin: '0px 0px -50px 0px'
 };
 
 const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
+    entries.forEach((entry, index) => {
         if (entry.isIntersecting) {
-            entry.target.classList.add('fade-in');
+            setTimeout(() => {
+                entry.target.classList.add('animate');
+            }, index * 150);
         }
     });
 }, observerOptions);
 
+// Observe sections and cards
 document.querySelectorAll('section > .container').forEach(section => {
     observer.observe(section);
 });
 
-// Contact form submission
+document.querySelectorAll('.project-card, .achievement-card, .skill-category').forEach(card => {
+    observer.observe(card);
+});
+
+// Contact form submission with enhanced feedback
 const contactForm = document.getElementById('contact-form');
 
 contactForm.addEventListener('submit', function(e) {
@@ -112,7 +130,7 @@ contactForm.addEventListener('submit', function(e) {
     // Show loading state
     const submitButton = contactForm.querySelector('button');
     const originalText = submitButton.textContent;
-    submitButton.textContent = 'Sending...';
+    submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
     submitButton.disabled = true;
 
     // Prepare email parameters
@@ -120,27 +138,50 @@ contactForm.addEventListener('submit', function(e) {
         from_name: contactForm.name.value,
         from_email: contactForm.email.value,
         message: contactForm.message.value,
-        to_name: 'Devak Devak'
+        to_name: 'Devak H'
     };
 
     // Send email using EmailJS
     emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', templateParams)
         .then(function(response) {
             console.log('SUCCESS!', response.status, response.text);
-            alert('Message sent successfully!');
+            showNotification('Message sent successfully!', 'success');
             contactForm.reset();
         }, function(error) {
             console.log('FAILED...', error);
-            alert('Failed to send message. Please try again.');
+            showNotification('Failed to send message. Please try again.', 'error');
         })
         .finally(() => {
             // Reset button state
-            submitButton.textContent = originalText;
+            submitButton.innerHTML = originalText;
             submitButton.disabled = false;
         });
 });
 
-// Typing animation for hero text
+// Notification system
+function showNotification(message, type) {
+    const notification = document.createElement('div');
+    notification.className = `notification ${type}`;
+    notification.innerHTML = `
+        <i class="fas ${type === 'success' ? 'fa-check-circle' : 'fa-exclamation-circle'}"></i>
+        ${message}
+    `;
+
+    document.body.appendChild(notification);
+
+    setTimeout(() => {
+        notification.classList.add('show');
+    }, 100);
+
+    setTimeout(() => {
+        notification.classList.remove('show');
+        setTimeout(() => {
+            document.body.removeChild(notification);
+        }, 300);
+    }, 3000);
+}
+
+// Enhanced typing animation for hero text
 const animatedText = document.querySelector('.animated-text span');
 const text = animatedText.textContent;
 animatedText.textContent = '';
@@ -151,18 +192,48 @@ function typeWriter() {
         animatedText.textContent += text.charAt(i);
         i++;
         setTimeout(typeWriter, 50);
+    } else {
+        // Add blinking cursor effect
+        animatedText.style.borderRight = '2px solid var(--primary-color)';
+        setInterval(() => {
+            animatedText.style.borderRight = animatedText.style.borderRight ? '' : '2px solid var(--primary-color)';
+        }, 500);
     }
 }
 
 window.addEventListener('load', () => {
-    setTimeout(typeWriter, 1000);
+    setTimeout(typeWriter, 1500);
 });
 
 // Parallax effect for hero section
 window.addEventListener('scroll', () => {
     const scrolled = window.pageYOffset;
     const hero = document.querySelector('.hero');
-    hero.style.transform = `translateY(${scrolled * 0.5}px)`;
+    const rate = scrolled * -0.5;
+    hero.style.transform = `translateY(${rate}px)`;
+});
+
+// Active navigation highlighting
+window.addEventListener('scroll', () => {
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('.nav-links a');
+
+    let current = '';
+
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        if (pageYOffset >= sectionTop - sectionHeight / 3) {
+            current = section.getAttribute('id');
+        }
+    });
+
+    navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href').slice(1) === current) {
+            link.classList.add('active');
+        }
+    });
 });
 
 // Close mobile menu when clicking outside
@@ -171,4 +242,18 @@ document.addEventListener('click', (e) => {
         navLinks.classList.remove('mobile');
         hamburger.classList.remove('active');
     }
+});
+
+// Add stagger animation to skill items
+document.querySelectorAll('.skill-item').forEach((item, index) => {
+    item.style.transitionDelay = `${index * 0.1}s`;
+});
+
+// Mouse follow effect for hero
+document.addEventListener('mousemove', (e) => {
+    const hero = document.querySelector('.hero');
+    const mouseX = e.clientX / window.innerWidth;
+    const mouseY = e.clientY / window.innerHeight;
+
+    hero.style.backgroundPosition = `${mouseX * 50}px ${mouseY * 50}px`;
 });
