@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Devak H - Front-End Web Developer</title>
+    <title>DEVAK H - Front-End Web Developer</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -11,265 +11,305 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="nav-container">
-                <div class="logo">Devak H</div>
-                <ul class="nav-links">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#education">Education</a></li>
-                    <li><a href="#experience">Experience</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#achievements">Achievements</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-                <div class="nav-icons">
-                    <a href="https://github.com/Devak1234" target="_blank"><i class="fab fa-github"></i></a>
-                    <a href="https://leetcode.com/u/Devakdevak123/" target="_blank"><i class="fas fa-code"></i></a>
-                    <button id="dark-mode-toggle"><i class="fas fa-moon"></i></button>
-                </div>
-                <div class="hamburger">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </div>
-        </nav>
+    <!-- Background Gradient -->
+    <div class="background-gradient">
+        <div class="blur-circle"></div>
+    </div>
+
+    <!-- Header -->
+    <header class="site-header">
+        <div class="header-content">
+            <h1 class="site-title">I'm DEVAK H</h1>
+            <nav class="main-nav">
+                <a href="#about" class="nav-link">About Me</a>
+                <a href="#projects" class="nav-link">My Projects</a>
+                <a href="#education" class="nav-link">My Education and Experience</a>
+                <a href="#technologies" class="nav-link">Skills</a>
+                <a href="#contact" class="nav-link">Contact Me</a>
+            </nav>
+        </div>
     </header>
 
-    <main>
-        <section id="home" class="hero">
-            <div class="hero-content">
-                <div class="profile-photo">
-                    <img src="Devak.jpg" alt="Devak H">
+    <!-- Theme Toggle -->
+    <button id="theme-toggle" class="theme-toggle">
+        <i class="fas fa-moon"></i>
+    </button>
+
+    <!-- Left Profile Card -->
+    <div class="profile-card">
+        <div class="profile-image">
+            <img src="Devak.jpg" alt="DEVAK H">
+        </div>
+        <h1 class="profile-name">DEVAK H</h1>
+        <p class="profile-role">Front-End Web Developer</p>
+        <div class="profile-details">
+            <div class="detail-item">
+                <i class="fas fa-envelope"></i>
+                <span>devakdevak30@gmail.com</span>
+            </div>
+            <div class="detail-item">
+                <i class="fas fa-phone"></i>
+                <span>+91-90255 53175</span>
+            </div>
+            <div class="detail-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>Tirunelveli, Tamil Nadu</span>
+            </div>
+        </div>
+        <div class="social-links">
+            <a href="https://github.com/Devak1234" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/devakdevak?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://leetcode.com/u/Devakdevak123/" target="_blank"><i class="fas fa-code"></i></a>
+        </div>
+    </div>
+
+    <!-- Main Sections -->
+    <div class="main-sections">
+        <!-- Home Section -->
+        <section id="home" class="section home-section">
+            <div class="section-container">
+                <div class="home-content">
+                    <div class="intro-text">
+                        <h1>I'm DEVAK H</h1>
+                        <h2>Front-End Web Developer</h2>
+                    </div>
+                    <div class="badge">Let's meet!</div>
+                    <div class="home-buttons">
+                        <button class="btn-primary" onclick="scrollToSection('projects')">My Works</button>
+                        <a href="Devak_Resume (3).pdf" class="btn-secondary" download>Download CV</a>
+                    </div>
                 </div>
-                <h1>Devak H</h1>
-                <h2>Front-End Web Developer</h2>
-                <div class="animated-text">
-                    <span>Passionate about creating interactive web experiences</span>
-                </div>
-                <div class="social-links">
-                    <a href="https://github.com/Devak1234" target="_blank"><i class="fab fa-github"></i></a>
-                    <a href="https://www.linkedin.com/in/devakdevak?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://leetcode.com/u/Devakdevak123/" target="_blank"><i class="fas fa-code"></i></a>
+                <div class="home-gradient-bubble"></div>
+            </div>
+        </section>
+
+        <!-- About Me Section -->
+        <section id="about" class="section about-section">
+            <div class="section-container">
+                <h2>Hey This is about Me!</h2>
+                <div class="about-grid">
+                    <div class="about-left">
+                        <div class="stats-cards">
+                            <div class="stat-card">
+                                <div class="stat-icon"><i class="fas fa-graduation-cap"></i></div>
+                                <div class="stat-text">
+                                    <div class="stat-number">Master Degree</div>
+                                    <div class="stat-label">Education</div>
+                                </div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-icon"><i class="fas fa-briefcase"></i></div>
+                                <div class="stat-text">
+                                    <div class="stat-number">3+ Years</div>
+                                    <div class="stat-label">Experience</div>
+                                </div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-icon"><i class="fas fa-project-diagram"></i></div>
+                                <div class="stat-text">
+                                    <div class="stat-number">10+ Projects</div>
+                                    <div class="stat-label">Completed</div>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="about-description">
+                            Passionate Computer Science graduate with hands-on experience in AngularJS, ReactJS, Python, and Node.js. Skilled in developing interactive, scalable, and responsive web applications. Successfully delivered projects like Sharenest, a community item-sharing platform, and real-time GUI applications using Python Pygame. Strong problem-solving mindset and ability to collaborate in agile environments.
+                        </p>
+                    </div>
+                    <div class="about-right">
+                        <div class="personal-details">
+                            <h3>Personal Details</h3>
+                            <div class="detail-item">
+                                <span class="label">Name:</span>
+                                <span class="value">DEVAK H</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="label">Email:</span>
+                                <span class="value">devakdevak30@gmail.com</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="label">Location:</span>
+                                <span class="value">Tirunelveli, Tamil Nadu, India</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section id="about">
-            <div class="container">
-                <h2>About Me</h2>
-                <div class="about-content">
-                    <p>Passionate Computer Science graduate with hands-on experience in AngularJS, ReactJS, Python, and Node.js. Skilled in developing interactive, scalable, and responsive web applications. Successfully delivered projects like Sharenest, a community item-sharing platform, and real-time GUI applications using Python Pygame. Strong problem-solving mindset and ability to collaborate in agile environments.</p>
-                    <a href="https://www.linkedin.com/in/devakdevak?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" class="linkedin-link">
-                        <i class="fab fa-linkedin"></i> LinkedIn Profile
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <section id="education">
-            <div class="container">
-                <h2>Education</h2>
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <div class="timeline-content">
-                            <h3>Bachelor of Science in Computer Science</h3>
-                            <p>Sadakathullah Appa College, Tirunelveli, Tamil Nadu</p>
-                            <span class="date">01/2021 - 04/2024</span>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-content">
-                            <h3>PCM with Biology</h3>
-                            <p>Cathedral Her Sec School, Tirunelveli, Tamil Nadu</p>
-                            <span class="date">05/2018 - 05/2021</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="experience">
-            <div class="container">
-                <h2>Experience</h2>
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <div class="timeline-content">
-                            <h3>AngularJS Intern</h3>
-                            <p>Bevywise Networks, Tirunelveli, Tamil Nadu</p>
-                            <ul>
-                                <li>Built interactive web components using AngularJS</li>
-                                <li>Ensured responsive design in collaboration with teams</li>
-                                <li>Used routing and two-way binding for real-time updates</li>
-                            </ul>
-                            <span class="date">12/2024 - 01/2025</span>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-content">
-                            <h3>Python Developer Intern</h3>
-                            <p>Iconix Software Solution, Tirunelveli, Tamil Nadu</p>
-                            <ul>
-                                <li>Designed and developed a GUI using Python's Pygame library</li>
-                                <li>Strengthened skills in real-time GUI updates and interactive design</li>
-                            </ul>
-                            <span class="date">04/2023 - 05/2023</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="projects">
-            <div class="container">
-                <h2>Projects</h2>
+        <!-- Projects Section -->
+        <section id="projects" class="section projects-section">
+            <div class="section-container">
+                <h2>Check out my projects</h2>
                 <div class="projects-grid">
-                    <div class="project-card">
-                        <h3>Student Online Complaint and Feedback Management System</h3>
-                        <p>A centralized digital platform for managing student complaints and collecting feedback efficiently within institutions.</p>
-                        <div class="tech-stack">
-                            <span>HTML</span><span>CSS</span><span>JavaScript</span><span>PHP</span><span>MySQL</span>
-                        </div>
-                        <ul>
-                            <li>Complaint and feedback submission</li>
-                            <li>Tracking system</li>
-                            <li>Admin dashboard</li>
-                            <li>Feedback export (Excel, PDF, CSV)</li>
-                            <li>Visual analytics</li>
-                            <li>CAPTCHA validation, secure file handling, SQL injection prevention</li>
-                        </ul>
-                        <p><strong>Outcome:</strong> Promotes transparency, accountability, and student engagement.</p>
+                    <div class="project-card" data-project="1">
+                        <img src="Student complaint.png" alt="Student Online Complaint System">
+                        <div class="project-badge">Student Online Complaint System</div>
                     </div>
-                    <div class="project-card">
-                        <h3>Sharenest</h3>
-                        <p>Full-stack project for item renting leveraging modern web technologies.</p>
-                        <div class="tech-stack">
-                            <span>ReactJS</span><span>Node.js</span>
-                        </div>
-                        <ul>
-                            <li>Platform for users to rent items from nearby people</li>
-                            <li>Notification system and request feature</li>
-                            <li>Promotes cost-saving and community bonding</li>
-                        </ul>
-                        <p><strong>Goal:</strong> Responsive, scalable, and user-friendly experience.</p>
-                        <span class="date">12/2023 - 04/2024</span>
+                    <div class="project-card" data-project="2">
+                        <img src="ShareNest.jpeg" alt="Sharenest">
+                        <div class="project-badge">Sharenest</div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="skills">
-            <div class="container">
-                <h2>Skills</h2>
-                <div class="skills-grid">
-                    <div class="skill-category">
-                        <h3>Programming Languages</h3>
-                        <div class="skill-list">
-                            <div class="skill-item">
-                                <span>Java</span>
-                                <div class="skill-bar"><div class="skill-fill" style="width: 85%"></div></div>
-                            </div>
-                            <div class="skill-item">
-                                <span>JavaScript</span>
-                                <div class="skill-bar"><div class="skill-fill" style="width: 90%"></div></div>
-                            </div>
-                            <div class="skill-item">
-                                <span>Python</span>
-                                <div class="skill-bar"><div class="skill-fill" style="width: 80%"></div></div>
-                            </div>
+        <!-- Education Section -->
+        <section id="education" class="section education-section">
+            <div class="section-container">
+                <h2>My Education</h2>
+                <div class="education-list">
+                    <div class="education-item">
+                        <div class="education-year">2024 – 2026</div>
+                        <div class="education-content">
+                            <h3>Master of Science in Computer Science</h3>
+                            <p>St. John's College, Palayamkottai</p>
                         </div>
+                        <div class="education-location">Tirunelveli, Tamil Nadu</div>
                     </div>
-                    <div class="skill-category">
-                        <h3>Web Development</h3>
-                        <div class="skill-list">
-                            <div class="skill-item">
-                                <span>HTML</span>
-                                <div class="skill-bar"><div class="skill-fill" style="width: 95%"></div></div>
-                            </div>
-                            <div class="skill-item">
-                                <span>CSS</span>
-                                <div class="skill-bar"><div class="skill-fill" style="width: 90%"></div></div>
-                            </div>
-                            <div class="skill-item">
-                                <span>AngularJS</span>
-                                <div class="skill-bar"><div class="skill-fill" style="width: 85%"></div></div>
-                            </div>
-                            <div class="skill-item">
-                                <span>MySQL</span>
-                                <div class="skill-bar"><div class="skill-fill" style="width: 80%"></div></div>
-                            </div>
-                            <div class="skill-item">
-                                <span>PHP</span>
-                                <div class="skill-bar"><div class="skill-fill" style="width: 75%"></div></div>
-                            </div>
+                    <div class="education-item">
+                        <div class="education-year">2021 – 2024</div>
+                        <div class="education-content">
+                            <h3>Bachelor of Science in Computer Science</h3>
+                            <p>Sadakathullah Appa College</p>
                         </div>
+                        <div class="education-location">Tirunelveli, Tamil Nadu</div>
+                    </div>
+                    <div class="education-item">
+                        <div class="education-year">2018 – 2021</div>
+                        <div class="education-content">
+                            <h3>PCM with Biology</h3>
+                            <p>Cathedral Her Sec School</p>
+                        </div>
+                        <div class="education-location">Tirunelveli, Tamil Nadu</div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="achievements">
-            <div class="container">
-                <h2>Achievements & Certificates</h2>
-                <div class="achievements-grid">
-                    <div class="achievement-card">
-                        <i class="fas fa-trophy"></i>
-                        <h3>Sharenest Project</h3>
-                        <p>Developed a platform that connects users for item renting, enhancing community sharing and cost-saving.</p>
+        <!-- Experience Section -->
+        <section id="experience" class="section experience-section">
+            <div class="section-container">
+                <h2>Work Experience</h2>
+                <div class="experience-card">
+                    <div class="experience-header">
+                        <h3>AngularJS Intern</h3>
+                        <span class="experience-year">Dec 2024 – Jan 2025</span>
                     </div>
-                    <div class="achievement-card">
-                        <i class="fas fa-certificate"></i>
-                        <h3>Analytical Skills</h3>
-                        <p>Strong problem-solving abilities and logical thinking skills demonstrated in various projects.</p>
+                    <p class="experience-company">Bevywise Networks, Tirunelveli, Tamil Nadu</p>
+                    <ul>
+                        <li>Built interactive web components using AngularJS</li>
+                        <li>Ensured responsive design in collaboration with teams</li>
+                        <li>Used routing and two-way binding for real-time updates</li>
+                    </ul>
+                </div>
+                <div class="experience-card">
+                    <div class="experience-header">
+                        <h3>Python Developer Intern</h3>
+                        <span class="experience-year">Apr 2023 – May 2023</span>
+                    </div>
+                    <p class="experience-company">Iconix Software Solution, Tirunelveli, Tamil Nadu</p>
+                    <ul>
+                        <li>Designed and developed a GUI using Python's Pygame library</li>
+                        <li>Strengthened skills in real-time GUI updates and interactive design</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technologies Section -->
+        <section id="technologies" class="section technologies-section">
+            <div class="section-container">
+                <h2>Technologies & Tools</h2>
+                <div class="tech-grid">
+                    <div class="tech-item">
+                        <i class="fab fa-html5"></i>
+                        <span>HTML5</span>
+                    </div>
+                    <div class="tech-item">
+                        <i class="fab fa-css3-alt"></i>
+                        <span>CSS</span>
+                    </div>
+                    <div class="tech-item">
+                        <i class="fab fa-js-square"></i>
+                        <span>JavaScript</span>
+                    </div>
+                    <div class="tech-item">
+                        <i class="fab fa-react"></i>
+                        <span>ReactJS</span>
+                    </div>
+                    <div class="tech-item">
+                        <i class="fab fa-php"></i>
+                        <span>PHP</span>
+                    </div>
+                    <div class="tech-item">
+                        <i class="fas fa-database"></i>
+                        <span>MySQL</span>
+                    </div>
+                    <div class="tech-item">
+                        <i class="fab fa-github"></i>
+                        <span>GitHub</span>
+                    </div>
+                    <div class="tech-item">
+                        <i class="fab fa-git-alt"></i>
+                        <span>Git</span>
+                    </div>
+                    <div class="tech-item">
+                        <i class="fas fa-code"></i>
+                        <span>VS Code</span>
+                    </div>
+                    <div class="tech-item">
+                        <i class="fas fa-tools"></i>
+                        <span>Postman</span>
+                    </div>
+                    <div class="tech-item">
+                        <i class="fas fa-terminal"></i>
+                        <span>Terminal</span>
+                    </div>
+                    <div class="tech-item">
+                        <i class="fab fa-bootstrap"></i>
+                        <span>Bootstrap</span>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="contact">
-            <div class="container">
-                <h2>Contact / Get in Touch</h2>
-                <div class="contact-content">
-                    <div class="contact-info">
-                        <div class="contact-item">
-                            <i class="fas fa-phone"></i>
-                            <span>+91-90255 53175</span>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fas fa-envelope"></i>
-                            <span>devakdevak30@gmail.com</span>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span>Tirunelveli, Tamil Nadu, India</span>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fab fa-linkedin"></i>
-                            <a href="https://www.linkedin.com/in/devakdevak?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">LinkedIn Profile</a>
-                        </div>
-                    </div>
-                    <form id="contact-form">
+        <!-- Contact Section -->
+        <section id="contact" class="section contact-section">
+            <div class="section-container">
+                <h2>Let's make something awesome together!</h2>
+                <form id="contact-form" class="contact-form">
+                    <div class="form-row">
                         <input type="text" name="name" placeholder="Your Name" required>
+                        <input type="text" name="company" placeholder="Company Name" required>
+                    </div>
+                    <div class="form-row">
                         <input type="email" name="email" placeholder="Your Email" required>
-                        <textarea name="message" placeholder="Your Message" required></textarea>
-                        <button type="submit">Send Message</button>
-                    </form>
-                </div>
-                <div class="social-links">
-                    <a href="https://github.com/Devak1234" target="_blank"><i class="fab fa-github"></i></a>
-                    <a href="https://www.linkedin.com/in/devakdevak?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://leetcode.com/u/Devakdevak123/" target="_blank"><i class="fas fa-code"></i></a>
-                </div>
+                        <input type="tel" name="number" placeholder="Your Number" required>
+                    </div>
+                    <textarea name="message" placeholder="Your Message" required></textarea>
+                    <button type="submit" class="btn-submit">
+                        <i class="fas fa-paper-plane"></i>
+                        Send Message
+                    </button>
+                </form>
             </div>
         </section>
-    </main>
+    </div>
 
-    <button id="back-to-top"><i class="fas fa-arrow-up"></i></button>
+    <!-- Project Modal -->
+    <div id="project-modal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <div class="modal-body">
+                <img id="modal-image" src="" alt="">
+                <h3 id="modal-title"></h3>
+                <p id="modal-description"></p>
+                <div id="modal-tech-stack" class="tech-stack"></div>
+            </div>
+        </div>
+    </div>
 
-    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
